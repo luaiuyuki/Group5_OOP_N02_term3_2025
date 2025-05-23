@@ -2,13 +2,13 @@
 
 # 👥 Thành viên nhóm:
 
-1.Nguyễn Thị Lụa
+1. Nguyễn Thị Lụa
 
 ID:23010369
 
 Chữ ký:
 
-2.Đặng Thị Thu Hoài
+2. Đặng Thị Thu Hoài
    
 ID:23010316
 
