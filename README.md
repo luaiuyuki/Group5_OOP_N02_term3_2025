@@ -25,21 +25,21 @@ Project 05 – Xây dựng ứng dụng quản lý sinh viên
 - Và các chức năng khác.
 
 ## Cụ thể:
-- Quản lý sinh viên:
+- **Quản lý sinh viên**:
 
-* Thêm, sửa, xóa sinh viên.
+    + Thêm, sửa, xóa sinh viên.
 
-+ Liệt kê thông tin về sinh viên, có thể lọc ra các sinh viên theo chuyên ngành hoặc giới tính.
+    + Liệt kê thông tin về sinh viên, có thể lọc ra các sinh viên theo chuyên ngành hoặc giới tính.
 
-- Quản lý môn học:
+- **Quản lý môn học**:
 
-+ Thêm, sửa, xóa môn học.
+    + Thêm, sửa, xóa môn học.
 
-- Quản lý bảng điểm:
+- **Quản lý bảng điểm**:
 
-+ Thêm, sửa, xóa điểm.
+    + Thêm, sửa, xóa điểm.
 
-+ Tự động quy đổi điểm hệ 10 sang hệ 4, điểm chữ, và đánh giá đạt / không đạt.
+    + Tự động quy đổi điểm hệ 10 sang hệ 4, điểm chữ, và đánh giá đạt / không đạt.
 
 - Có chức năng đăng ký sinh viên vào các khóa học tương ứng.
 
