@@ -48,7 +48,9 @@ Project 05: Xây dựng ứng dụng quản lý sinh viên
 - Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map, ....
 
 ## Sơ đồ khối yêu cầu
+
 **1.1 UML Class Diagram**
+
 ![ẢNH STUDENT](https://github.com/user-attachments/assets/a6998f6a-7109-4c8b-8a08-d3e44bb9ff25)
 
 
