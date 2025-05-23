@@ -16,7 +16,7 @@
 
 # 🧾 Tên Dự Án
 
-Project 05 – Xây dựng ứng dụng quản lý sinh viên
+Project 05. Xây dựng ứng dụng quản lý sinh viên
 
 # 🎯 Yêu cầu chính:
 
