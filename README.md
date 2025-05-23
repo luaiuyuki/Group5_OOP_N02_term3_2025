@@ -14,9 +14,9 @@
 
    Chữ ký:
 
-# 🧾 Tên Dự Án
+## 🧾 Tên Dự Án
 
-Project 05. Xây dựng ứng dụng quản lý sinh viên
+Project 05: Xây dựng ứng dụng quản lý sinh viên
 
 # 🎯 Yêu cầu chính:
 
@@ -24,7 +24,7 @@ Project 05. Xây dựng ứng dụng quản lý sinh viên
 - Có chức năng quản lý sinh viên, môn học và bảng điểm.
 - Và các chức năng khác.
 
-## Cụ thể:
+# Cụ thể:
 - **Quản lý sinh viên**:
 
     + Thêm, sửa, xóa sinh viên.
@@ -46,4 +46,9 @@ Project 05. Xây dựng ứng dụng quản lý sinh viên
 - Dữ liệu được lưu trữ xuống file nhị phân.
 - Cần tạo các lớp liên quan đến “Sinh viên”, “Môn học”, “Bảng điểm” để đọc, ghi dữ liệu vào một hoặc nhiều file.
 - Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map, ....
+
+## Sơ đồ khối yêu cầu
+**1.1 UML Class Diagram**
+![ẢNH STUDENT](https://github.com/user-attachments/assets/a6998f6a-7109-4c8b-8a08-d3e44bb9ff25)
+
 
