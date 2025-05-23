@@ -18,7 +18,7 @@
 
 Project 05: Xây dựng ứng dụng quản lý sinh viên
 
-# 🎯 Yêu cầu chính:
+## 🎯 Yêu cầu chính:
 
 - Giao diện <b>Java Spring Boot</b>.
 - Có chức năng quản lý sinh viên, môn học và bảng điểm.
