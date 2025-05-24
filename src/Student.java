@@ -15,29 +15,46 @@ public class Student {
         this.major = major;
     }
 
-    // Getter cho studentId
+    // Getter
     public String getStudentId() {
         return studentId;
     }
 
-    // Getter cho name
     public String getName() {
         return name;
     }
 
-    // Getter cho gender
     public String getGender() {
         return gender;
     }
 
-    // Getter cho dateOfBirth
     public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    // Getter cho major
     public String getMajor() {
         return major;
+    }
+
+    // Setter
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
     }
 
     // Hàm in thông tin sinh viên theo từng dòng
@@ -47,7 +64,13 @@ public class Student {
         System.out.println("Gender: " + gender);
         System.out.println("Date of birth: " + dateOfBirth);
         System.out.println("Major: " + major);
-        System.out.println();  // dòng trống giữa các sinh viên
+        System.out.println();
+    }
+
+    @Override
+    public String toString() {
+        return "StudentID: " + studentId + ", Name: " + name + 
+               ", Gender: " + gender + ", DOB: " + dateOfBirth + 
+               ", Major: " + major;
     }
 }
-
