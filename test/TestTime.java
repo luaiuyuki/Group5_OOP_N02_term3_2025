@@ -1,13 +1,27 @@
+import java.util.Scanner;
+
 public class TestTime {
     public static void main(String[] args) {
-        Time t = new Time(13, 45, 30);
-        System.out.println("Time: " + t);
-        System.out.println("Add 5000 seconds: " + t.addSeconds(5000));
-        System.out.println("Next second: " + t.nextSecond());
-        System.out.println("Previous second: " + t.previousSecond());
+        Scanner sc = new Scanner(System.in);
 
-        Time t2 = new Time(14, 0, 0);
-        System.out.println("Compare to t2: " + t.compare(t2));
-        System.out.println("Subtract t2: " + t.subtract(t2));
-    }
-}
+        System.out.println("Enter course start time:");
+        Time startTime = new Time();
+        startTime.inputTime();
+
+        System.out.println("Enter course end time:");
+        Time endTime = new Time();
+        endTime.inputTime();
+
+        System.out.println("Course start time: " + startTime);
+        System.out.println("Course end time: " + endTime);
+
+        int diffSeconds = endTime.subtract(startTime); // Tính hiệu thời gian (giây)
+
+        // Nếu thời gian kết thúc nhỏ hơn thời gian bắt đầu, giả sử là qua ngày hôm sau
+        if (diffSeconds < 0) {
+            diffSeconds += 24 * 3600; // Cộng thêm 24 giờ (86400 giây)
+        }
+
+        System.out.println("Duration of the course: " + Time.secondsToTimeFormat(diffSeconds));//Thời gian khóa học kéo dài
+
+        sc.close();
