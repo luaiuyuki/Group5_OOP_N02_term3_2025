@@ -2,7 +2,7 @@ public class Course {
     private String courseID;
     private String courseName;
     private int credits;
-    private String status; //"Học đi"(studying) hoặc "Học lại"(retake)
+    private String status; // "Học đi" (studying) hoặc "Học lại" (retake)
 
     public Course() {}
 
@@ -11,6 +11,26 @@ public class Course {
         this.courseName = courseName;
         this.credits = credits;
         this.status = status;
+    }
+
+    // Getter cho courseID
+    public String getCourseID() {
+        return courseID;
+    }
+
+    // Getter cho courseName
+    public String getCourseName() {
+        return courseName;
+    }
+
+    // Getter cho credits
+    public int getCredits() {
+        return credits;
+    }
+
+    // Getter cho status
+    public String getStatus() {
+        return status;
     }
 
     // Hàm in thông tin môn học theo từng dòng
