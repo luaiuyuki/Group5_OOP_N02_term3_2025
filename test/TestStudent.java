@@ -1,42 +1,43 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TestStudent {
+// Lớp StudentTest để kiểm tra lớp Student bằng cách nhập dữ liệu từ bàn phím
+public class StudentTest {
     public static void main(String[] args) {
-        ArrayList<Student> students = new ArrayList<>();
-
-        // Create some sample students
-        students.add(new Student("S001", "Lan", "Female", "2003-01-01", "IT"));
-        students.add(new Student("S002", "Minh", "Male", "2002-12-12", "CS"));
-
         Scanner sc = new Scanner(System.in);
+        ArrayList<Student> studentList = new ArrayList<>();
 
-        System.out.println("Initial list of students:");
-        for (Student s : students) {
-            System.out.println(s);
+        // Nhập số lượng sinh viên
+        System.out.print("Enter the number of students: ");
+        int n = Integer.parseInt(sc.nextLine());
+
+        // Nhập thông tin cho từng sinh viên
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nEnter information for student " + (i + 1) + ":");
+
+            System.out.print("Student ID: ");
+            String id = sc.nextLine();
+
+            System.out.print("Name: ");
+            String name = sc.nextLine();
+
+            System.out.print("Gender: ");
+            String gender = sc.nextLine();
+
+            System.out.print("Date of birth: ");
+            String dob = sc.nextLine();
+
+            System.out.print("Major: ");
+            String major = sc.nextLine();
+
+            // Tạo đối tượng Student và thêm vào danh sách
+            Student s = new Student(id, name, gender, dob, major);
+            studentList.add(s);
         }
 
-        System.out.print("\nEnter the student ID to delete: ");
-        String idToDelete = sc.nextLine();
-
-        // Delete student by entered ID
-        boolean removed = false;
-        for (Student s : students) {
-            if (s.getStudentId().equalsIgnoreCase(idToDelete)) {
-                students.remove(s);
-                removed = true;
-                break;
-            }
-        }
-
-        if (removed) {
-            System.out.println("Deleted student with ID: " + idToDelete);
-        } else {
-            System.out.println("Student with ID " + idToDelete + " not found.");
-        }
-
-        System.out.println("\nList of students after deletion:");
-        for (Student s : students) {
+        // Hiển thị danh sách sinh viên sau khi nhập
+        System.out.println("\n===== STUDENT LIST =====");
+        for (Student s : studentList) {
             System.out.println(s);
         }
 
