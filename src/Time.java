@@ -84,6 +84,15 @@ public class Time {
         return addSeconds(-1);
     }
 
+    // Phương thức tĩnh bổ sung để chuyển giây sang định dạng hh:mm:ss
+    public static String secondsToTimeFormat(int totalSeconds) {
+        totalSeconds = ((totalSeconds % 86400) + 86400) % 86400;  // đảm bảo trong ngày
+        int h = totalSeconds / 3600;
+        int m = (totalSeconds % 3600) / 60;
+        int s = totalSeconds % 60;
+        return String.format("%02d:%02d:%02d", h, m, s);
+    }
+
     @Override
     public String toString() {
         return String.format("%02d:%02d:%02d", hour, minute, second);

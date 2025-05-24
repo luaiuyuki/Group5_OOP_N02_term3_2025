@@ -25,3 +25,5 @@ public class TestTime {
         System.out.println("Duration of the course: " + Time.secondsToTimeFormat(diffSeconds));//Thời gian khóa học kéo dài
 
         sc.close();
+    }
+}
