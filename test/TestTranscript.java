@@ -40,7 +40,7 @@ public class TestTranscript {
             System.out.print("Credits: ");
             int credits = Integer.parseInt(sc.nextLine());
 
-            System.out.print("Status (Học đi/Học lại): ");
+            System.out.print("Status (Studying/Retake): ");
             String status = sc.nextLine();
 
             Course c = new Course(courseId, courseName, credits, status);
@@ -64,4 +64,3 @@ public class TestTranscript {
     }
 }
 
-}
