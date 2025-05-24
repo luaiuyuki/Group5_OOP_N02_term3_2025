@@ -15,6 +15,31 @@ public class Student {
         this.major = major;
     }
 
+    // Getter cho studentId
+    public String getStudentId() {
+        return studentId;
+    }
+
+    // Getter cho name
+    public String getName() {
+        return name;
+    }
+
+    // Getter cho gender
+    public String getGender() {
+        return gender;
+    }
+
+    // Getter cho dateOfBirth
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    // Getter cho major
+    public String getMajor() {
+        return major;
+    }
+
     // Hàm in thông tin sinh viên theo từng dòng
     public void printStudentInfo() {
         System.out.println("Student ID: " + studentId);
@@ -25,3 +50,4 @@ public class Student {
         System.out.println();  // dòng trống giữa các sinh viên
     }
 }
+
