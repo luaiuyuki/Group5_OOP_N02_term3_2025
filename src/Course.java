@@ -2,7 +2,7 @@ public class Course {
     private String courseID;
     private String courseName;
     private int credits;
-    private String status; // "Học đi"(studying) hoặc "Học lại"(retake)
+    private String status; //"Học đi"(studying) hoặc "Học lại"(retake)
 
     public Course() {}
 
@@ -13,20 +13,13 @@ public class Course {
         this.status = status;
     }
 
-    public String getCourseID() { return courseID; }
-    public void setCourseID(String courseID) { this.courseID = courseID; }
-
-    public String getCourseName() { return courseName; }
-    public void setCourseName(String courseName) { this.courseName = courseName; }
-
-    public int getCredits() { return credits; }
-    public void setCredits(int credits) { this.credits = credits; }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-
-    @Override
-    public String toString() {
-        return courseID + " - " + courseName + " (" + credits + " credits), Status: " + status;
+    // Hàm in thông tin môn học theo từng dòng
+    public void printCourseInfo() {
+        System.out.println("Course ID   : " + courseID);
+        System.out.println("Course Name : " + courseName);
+        System.out.println("Credits     : " + credits);
+        System.out.println("Status      : " + status);
+        System.out.println(); // dòng trống giữa các môn học
     }
 }
+
