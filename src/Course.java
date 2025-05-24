@@ -2,7 +2,7 @@ public class Course {
     private String courseID;
     private String courseName;
     private int credits;
-    private String status; // "Học đi" hoặc "Học lại"
+    private String status; // "Học đi"(studying) hoặc "Học lại"(retake)
 
     public Course() {}
 
