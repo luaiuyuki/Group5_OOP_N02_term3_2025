@@ -20,6 +20,9 @@ public class Transcript {
     public float getGrade10() { return grade10; }
     public void setGrade10(float grade10) { this.grade10 = grade10; }
 
+    /**
+     * Tính điểm hệ 4 dựa trên điểm hệ 10
+     */
     public float getGrade4() {
         if (grade10 >= 8.5f) return 4.0f;
         else if (grade10 >= 7.0f) return 3.0f;
@@ -28,6 +31,9 @@ public class Transcript {
         else return 0.0f;
     }
 
+    /**
+     * Chuyển điểm số sang điểm chữ
+     */
     public String getLetterGrade() {
         if (grade10 >= 8.5f) return "A";
         else if (grade10 >= 7.0f) return "B";
@@ -36,8 +42,24 @@ public class Transcript {
         else return "F";
     }
 
+    /**
+     * Xác định học sinh pass hay fail dựa trên điểm hệ 10
+     */
     public String getPassFail() {
         return grade10 >= 4.0f ? "Pass" : "Fail";
+    }
+
+    /**
+     * In ra thông tin chi tiết của bảng điểm
+     */
+    public void printTranscriptInfo() {
+        System.out.println("Student Name : " + student.getName());
+        System.out.println("Course Name  : " + course.getCourseName());
+        System.out.println("Grade (10)   : " + grade10);
+        System.out.println("Grade (4)    : " + getGrade4());
+        System.out.println("Letter Grade : " + getLetterGrade());
+        System.out.println("Result       : " + getPassFail());
+        System.out.println();  // Dòng trống giữa các bản ghi
     }
 
     @Override
