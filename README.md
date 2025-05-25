@@ -8,7 +8,7 @@
 
    Chữ ký:
 
-2.  Đặng Thị Thu Hoài
+2. Đặng Thị Thu Hoài
    
    ID:23010316
 
