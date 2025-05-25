@@ -4,7 +4,7 @@ public class TestUser {
     public static void main(String[] args) {
         // Tạo user mẫu
         User u1 = new User("U001", "alice", "pass123", "admin");
-        User u2 = new User("U002", "bob", "123456", "student");
+        User u2 = new User("U002", "mary", "123456", "student");
 
         Scanner scanner = new Scanner(System.in);
 
