@@ -9,7 +9,7 @@ public class Student {
 
     public Student(String studentId, String name, String gender, String dateOfBirth, String major) {
         this.studentId = studentId;
-        this.name = nae;
+        this.name = name;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.major = major;
