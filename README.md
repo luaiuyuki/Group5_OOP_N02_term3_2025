@@ -25,7 +25,7 @@ Project 05: Xây dựng ứng dụng quản lý sinh viên
 - Và các chức năng khác.
 
 # Cụ thể:
-- **Quản lý sinh viên**:
+- **Quản lý sinh viên*:
 
     + Thêm, sửa, xoá sinh viên.
 
