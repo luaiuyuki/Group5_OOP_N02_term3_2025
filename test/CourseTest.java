@@ -28,7 +28,7 @@ public class CourseTest {
             courseList.add(c);
         }
 
-        System.out.println("\n==== COURSE LIST ====");
+        System.out.println("\n===== COURSE LIST =====");
         for (Course c : courseList) {
             c.printCourseInfo(); // in chi tiết từng môn học
         }
