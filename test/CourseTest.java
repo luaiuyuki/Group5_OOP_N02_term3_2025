@@ -30,7 +30,7 @@ public class CourseTest {
 
         System.out.println("\n===== COURSE LIST =====");
         for (Course c : courseList) {
-            c.printCourseInfo(); // in chi tiết từng môn học
+            c.printCourseInfo(); // in chi tiết từng môn học 
         }
 
         sc.close();
