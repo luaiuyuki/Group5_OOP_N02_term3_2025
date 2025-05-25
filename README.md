@@ -27,7 +27,7 @@ Project 05: Xây dựng ứng dụng quản lý sinh viên
 # Cụ thể:
 - **Quản lý sinh viên**:
 
-    + Thêm, sửa,  sinh viên.
+    + Thêm, sửa, xoá sinh viên.
 
     + Liệt kê thông tin về sinh viên, có thể lọc ra các sinh viên theo chuyên ngành hoặc giới tính.
 
