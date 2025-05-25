@@ -8,7 +8,7 @@ public class TestUser {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("===== USER LOGIN =====");
+        System.out.println("==== USER LOGIN ====");
         System.out.print("Username: ");
         String inputUsername = scanner.nextLine();
 
