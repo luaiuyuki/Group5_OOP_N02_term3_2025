@@ -56,5 +56,4 @@ Project 05: Xây dựng ứng dụng quản lý sinh viên
 **1.2 UML Sequence Diagram**
 
 
-![ảnh chi tiết](https://github.com/user-attachments/assets/620d9b8e-2a29-43f1-b44b-becbf7a38cda)
 
