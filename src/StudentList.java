@@ -42,7 +42,7 @@ public class StudentList {
     // Hiển thị tất cả sinh viên
     public void showAll() {
         for (Student s : list) {
-            s.printStudentInfo();  // in ra thông tin chi tiết
+            s.display();  // gọi hàm display() để in thông tin chi tiết sinh viên
         }
     }
 }

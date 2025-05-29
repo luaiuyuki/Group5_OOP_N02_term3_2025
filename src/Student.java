@@ -1,4 +1,6 @@
-public class Student {
+import java.util.Scanner;
+
+public class Student implements Entity {
     private String studentId;
     private String name;
     private String gender;
@@ -16,49 +18,42 @@ public class Student {
     }
 
     // Getter
-    public String getStudentId() {
+    public String getStudentId() { return studentId; }
+    public String getName() { return name; }
+    public String getGender() { return gender; }
+    public String getDateOfBirth() { return dateOfBirth; }
+    public String getMajor() { return major; }
+
+    // Setter
+    public void setStudentId(String studentId) { this.studentId = studentId; }
+    public void setName(String name) { this.name = name; }
+    public void setGender(String gender) { this.gender = gender; }
+    public void setDateOfBirth(String dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public void setMajor(String major) { this.major = major; }
+
+    // Triển khai từ interface Entity
+    @Override
+    public String getId() {
         return studentId;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter student ID: ");
+        studentId = sc.nextLine();
+        System.out.print("Enter name: ");
+        name = sc.nextLine();
+        System.out.print("Enter gender: ");
+        gender = sc.nextLine();
+        System.out.print("Enter date of birth: ");
+        dateOfBirth = sc.nextLine();
+        System.out.print("Enter major: ");
+        major = sc.nextLine();
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public String getMajor() {
-        return major;
-    }
-
-    // Setter
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
-    // Hàm in thông tin sinh viên theo từng dòng
-    public void printStudentInfo() {
+    @Override
+    public void display() {
         System.out.println("Student ID: " + studentId);
         System.out.println("Name: " + name);
         System.out.println("Gender: " + gender);
@@ -67,6 +62,7 @@ public class Student {
         System.out.println();
     }
 
+    // Dùng để hiển thị dạng dòng gọn hơn nếu cần
     @Override
     public String toString() {
         return "StudentID: " + studentId + ", Name: " + name + 

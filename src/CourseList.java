@@ -46,7 +46,7 @@ public class CourseList {
             return;
         }
         for (Course c : list) {
-            c.printCourseInfo();
+            c.display();  // Gọi hàm display() để in thông tin chi tiết môn học
         }
     }
 }
