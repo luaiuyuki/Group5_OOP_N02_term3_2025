@@ -25,11 +25,11 @@ public class App {
             if (entityChoice == 0) break;
 
             switch (entityChoice) {
-                case 1 -> {
+                case 1 -> { // Student menu
                     System.out.println("\nStudent:");
                     System.out.println("1. Add");
                     System.out.println("2. Delete");
-                    System.out.println("3. ShowAll");
+                    System.out.println("3. Show All");
                     System.out.println("4. Search by ID");
                     System.out.println("0. Exit");
                     int c = Integer.parseInt(sc.nextLine());
@@ -64,11 +64,11 @@ public class App {
                         }
                     }
                 }
-                case 2 -> {
+                case 2 -> { // Course menu
                     System.out.println("\nCourse:");
                     System.out.println("1. Add");
                     System.out.println("2. Delete");
-                    System.out.println("3. ShowAll");
+                    System.out.println("3. Show All");
                     System.out.println("4. Search by ID");
                     System.out.println("0. Exit");
                     int c = Integer.parseInt(sc.nextLine());
@@ -103,11 +103,11 @@ public class App {
                         }
                     }
                 }
-                case 3 -> {
+                case 3 -> { // Transcript menu
                     System.out.println("\nTranscript:");
                     System.out.println("1. Add");
                     System.out.println("2. Delete");
-                    System.out.println("3. ShowAll");
+                    System.out.println("3. Show All");
                     System.out.println("4. Search by ID (studentId-courseId)");
                     System.out.println("0. Exit");
                     int c = Integer.parseInt(sc.nextLine());
@@ -142,7 +142,7 @@ public class App {
                         }
                     }
                 }
-                case 4 -> {
+                case 4 -> { // Reports menu
                     System.out.println("\nReports:");
                     System.out.println("1. Display students in semester");
                     System.out.println("2. Display courses taken by student");
