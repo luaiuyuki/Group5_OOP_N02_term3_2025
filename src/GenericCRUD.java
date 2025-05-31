@@ -40,4 +40,9 @@ public class GenericCRUD<T extends Entity> {
             item.display();
         }
     }
+
+    //  Thêm phương thức getList để các class khác có thể dùng
+    public List<T> getList() {
+        return list;
+    }
 }
