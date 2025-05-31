@@ -1,175 +1,110 @@
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.stream.Collectors;
 
-public class App {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+public class StudentService {
 
-        GenericCRUD<Student> studentCRUD = new GenericCRUD<>();
-        GenericCRUD<Course> courseCRUD = new GenericCRUD<>();
-        GenericCRUD<Transcript> transcriptCRUD = new GenericCRUD<>();
+    // Hiển thị danh sách sinh viên theo học kỳ dựa vào bảng điểm (transcript)
+    public static void displayStudentsInSemester(List<Transcript> transcripts, List<Student> students, String semester) {
+        System.out.println("Students in semester " + semester + ":");
 
-        List<Student> students = new ArrayList<>();
-        List<Course> courses = new ArrayList<>();
-        List<Transcript> transcripts = new ArrayList<>();
+        // Lọc các transcript hợp lệ (có học kỳ đúng, student không null)
+        List<String> studentIdsInSemester = transcripts.stream()
+                .filter(t -> t != null && semester.equalsIgnoreCase(t.getSemester()))
+                .filter(t -> t.getStudent() != null)
+                .map(t -> t.getStudent().getStudentId())
+                .distinct()
+                .collect(Collectors.toList());
 
-        while (true) {
-            System.out.println("\nChoose entity:");
-            System.out.println("1. Student");
-            System.out.println("2. Course");
-            System.out.println("3. Transcript");
-            System.out.println("4. Reports (StudentService)");
-            System.out.println("0. Exit");
-            int entityChoice = Integer.parseInt(sc.nextLine());
-            if (entityChoice == 0) break;
+        // Lọc sinh viên theo danh sách ID đã lọc
+        List<Student> filteredStudents = students.stream()
+                .filter(s -> studentIdsInSemester.contains(s.getStudentId()))
+                .collect(Collectors.toList());
 
-            switch (entityChoice) {
-                case 1 -> { // Student menu
-                    System.out.println("\nStudent:");
-                    System.out.println("1. Add");
-                    System.out.println("2. Delete");
-                    System.out.println("3. Show All");
-                    System.out.println("4. Search by ID");
-                    System.out.println("0. Exit");
-                    int c = Integer.parseInt(sc.nextLine());
-                    switch (c) {
-                        case 1 -> {
-                            Student s = new Student();
-                            s.input();
-                            studentCRUD.add(s);
-                            students.add(s);
-                        }
-                        case 2 -> {
-                            System.out.print("Enter student ID to delete: ");
-                            String id = sc.nextLine();
-                            if (studentCRUD.delete(id)) {
-                                students.removeIf(st -> st.getStudentId().equalsIgnoreCase(id));
-                                System.out.println("Deleted.");
-                            } else {
-                                System.out.println("Not found.");
-                            }
-                        }
-                        case 3 -> studentCRUD.showAll();
-                        case 4 -> {
-                            System.out.print("Enter student ID to search: ");
-                            String id = sc.nextLine();
-                            Student found = studentCRUD.search(id);
-                            if (found != null) {
-                                System.out.println("Found student:");
-                                System.out.println(found);
-                            } else {
-                                System.out.println("Student not found.");
-                            }
-                        }
-                    }
-                }
-                case 2 -> { // Course menu
-                    System.out.println("\nCourse:");
-                    System.out.println("1. Add");
-                    System.out.println("2. Delete");
-                    System.out.println("3. Show All");
-                    System.out.println("4. Search by ID");
-                    System.out.println("0. Exit");
-                    int c = Integer.parseInt(sc.nextLine());
-                    switch (c) {
-                        case 1 -> {
-                            Course course = new Course();
-                            course.input();
-                            courseCRUD.add(course);
-                            courses.add(course);
-                        }
-                        case 2 -> {
-                            System.out.print("Enter course ID to delete: ");
-                            String id = sc.nextLine();
-                            if (courseCRUD.delete(id)) {
-                                courses.removeIf(co -> co.getCourseID().equalsIgnoreCase(id));
-                                System.out.println("Deleted.");
-                            } else {
-                                System.out.println("Not found.");
-                            }
-                        }
-                        case 3 -> courseCRUD.showAll();
-                        case 4 -> {
-                            System.out.print("Enter course ID to search: ");
-                            String id = sc.nextLine();
-                            Course found = courseCRUD.search(id);
-                            if (found != null) {
-                                System.out.println("Found course:");
-                                System.out.println(found);
-                            } else {
-                                System.out.println("Course not found.");
-                            }
-                        }
-                    }
-                }
-                case 3 -> { // Transcript menu
-                    System.out.println("\nTranscript:");
-                    System.out.println("1. Add");
-                    System.out.println("2. Delete");
-                    System.out.println("3. Show All");
-                    System.out.println("4. Search by ID (studentId-courseId)");
-                    System.out.println("0. Exit");
-                    int c = Integer.parseInt(sc.nextLine());
-                    switch (c) {
-                        case 1 -> {
-                            Transcript t = new Transcript();
-                            t.input();
-                            transcriptCRUD.add(t);
-                            transcripts.add(t);
-                        }
-                        case 2 -> {
-                            System.out.print("Enter transcript ID to delete (studentId-courseId): ");
-                            String id = sc.nextLine();
-                            if (transcriptCRUD.delete(id)) {
-                                transcripts.removeIf(tr -> tr.getId().equalsIgnoreCase(id));
-                                System.out.println("Deleted.");
-                            } else {
-                                System.out.println("Not found.");
-                            }
-                        }
-                        case 3 -> transcriptCRUD.showAll();
-                        case 4 -> {
-                            System.out.print("Enter transcript ID to search (studentId-courseId): ");
-                            String id = sc.nextLine();
-                            Transcript found = transcriptCRUD.search(id);
-                            if (found != null) {
-                                System.out.println("Found transcript:");
-                                System.out.println(found);
-                            } else {
-                                System.out.println("Transcript not found.");
-                            }
-                        }
-                    }
-                }
-                case 4 -> { // Reports menu
-                    System.out.println("\nReports:");
-                    System.out.println("1. Display students in semester");
-                    System.out.println("2. Display courses taken by student");
-                    System.out.println("3. Display grade report by semester");
-                    System.out.println("0. Exit");
-                    int c = Integer.parseInt(sc.nextLine());
-                    switch (c) {
-                        case 1 -> {
-                            System.out.print("Enter semester: ");
-                            String semester = sc.nextLine();
-                            StudentService.displayStudentsInSemester(transcripts, students, semester);
-                        }
-                        case 2 -> {
-                            System.out.print("Enter student ID: ");
-                            String studentId = sc.nextLine();
-                            StudentService.displayCoursesByStudentId(transcripts, courses, studentId);
-                        }
-                        case 3 -> {
-                            System.out.print("Enter semester: ");
-                            String semester = sc.nextLine();
-                            StudentService.displayGradeReport(transcripts, students, courses, semester);
-                        }
-                    }
-                }
-            }
+        if (filteredStudents.isEmpty()) {
+            System.out.println("No students found for this semester.");
+        } else {
+            filteredStudents.forEach(s -> System.out.println(s));
+        }
+    }
+
+    // Hiển thị danh sách khóa học mà một sinh viên đã học
+    public static void displayCoursesByStudentId(List<Transcript> transcripts, List<Course> courses, String studentId) {
+        System.out.println("Courses taken by student " + studentId + ":");
+
+        // Lọc các transcript của sinh viên (tránh null student/course)
+        List<String> courseIds = transcripts.stream()
+                .filter(t -> t.getStudent() != null && studentId.equalsIgnoreCase(t.getStudent().getStudentId()))
+                .filter(t -> t.getCourse() != null)
+                .map(t -> t.getCourse().getCourseID())
+                .distinct()
+                .collect(Collectors.toList());
+
+        if (courseIds.isEmpty()) {
+            System.out.println("No courses found for this student.");
+            return;
         }
 
-        sc.close();
+        // Lọc các course trong danh sách đã lấy được
+        List<Course> filteredCourses = courses.stream()
+                .filter(c -> courseIds.contains(c.getCourseID()))
+                .collect(Collectors.toList());
+
+        filteredCourses.forEach(System.out::println);
+    }
+
+    // Hiển thị báo cáo điểm của tất cả sinh viên trong một học kỳ với logic ẩn điểm khi đang học
+    public static void displayGradeReport(List<Transcript> transcripts, List<Student> students, List<Course> courses, String semester) {
+        System.out.println("Grade report for semester " + semester + ":");
+
+        // Lọc các transcript theo học kỳ
+        List<Transcript> transcriptsInSemester = transcripts.stream()
+                .filter(t -> t != null && semester.equalsIgnoreCase(t.getSemester()))
+                .collect(Collectors.toList());
+
+        if (transcriptsInSemester.isEmpty()) {
+            System.out.println("No transcripts found for this semester.");
+            return;
+        }
+
+        // In tiêu đề báo cáo
+        System.out.printf("%-10s %-20s %-10s %-20s %-7s %-7s %-7s %-10s\n",
+                "StudentID", "StudentName", "CourseID", "CourseName", "Grade10", "Grade4", "Letter", "Status");
+
+        for (Transcript t : transcriptsInSemester) {
+            Student s = t.getStudent();
+            Course c = courses.stream()
+                    .filter(course -> course.getCourseID().equalsIgnoreCase(t.getCourse().getCourseID()))
+                    .findFirst().orElse(null);
+
+            String studentName = (s != null) ? s.getName() : "Unknown";
+            String courseName = (c != null) ? c.getCourseName() : "Unknown";
+
+            // Xác định trạng thái
+            String status;
+            boolean hasGrade = t.getGrade10() > 0 && !"N/A".equalsIgnoreCase(t.getLetterGrade());
+
+            if (!hasGrade) {
+                status = "Studying"; // Đang học thì chưa có điểm
+            } else if (t.getGrade10() < 5.0 || "Fail".equalsIgnoreCase(t.getPassFail())) {
+                status = "Retaking"; // Học lại
+            } else {
+                status = "Completed"; // Đã học xong
+            }
+
+            if ("Studying".equals(status)) {
+                // Đang học => ẩn điểm
+                System.out.printf("%-10s %-20s %-10s %-20s %-7s %-7s %-7s %-10s\n",
+                        (s != null ? s.getStudentId() : "Unknown"), studentName,
+                        (t.getCourse() != null ? t.getCourse().getCourseID() : "Unknown"), courseName,
+                        "--", "--", "--", status);
+            } else {
+                // Học lại hoặc hoàn thành thì hiện điểm
+                System.out.printf("%-10s %-20s %-10s %-20s %-7.2f %-7.2f %-7s %-10s\n",
+                        (s != null ? s.getStudentId() : "Unknown"), studentName,
+                        (t.getCourse() != null ? t.getCourse().getCourseID() : "Unknown"), courseName,
+                        t.getGrade10(), t.getGrade4(), t.getLetterGrade(), status);
+            }
+        }
     }
 }
+
