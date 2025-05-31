@@ -1,18 +1,21 @@
 import java.util.Scanner;
 
 public class Transcript implements Entity {
-    private Student student;
-    private Course course;
-    private float grade10; // Điểm hệ 10
+    private Student student;      // Sinh viên
+    private Course course;        // Môn học
+    private float grade10;        // Điểm hệ 10
+    private String semester;      // Học kỳ
 
     public Transcript() {}
 
-    public Transcript(Student student, Course course, float grade10) {
+    public Transcript(Student student, Course course, float grade10, String semester) {
         this.student = student;
         this.course = course;
         this.grade10 = grade10;
+        this.semester = semester;
     }
 
+    // Getters and Setters
     public Student getStudent() { return student; }
     public void setStudent(Student student) { this.student = student; }
 
@@ -22,6 +25,10 @@ public class Transcript implements Entity {
     public float getGrade10() { return grade10; }
     public void setGrade10(float grade10) { this.grade10 = grade10; }
 
+    public String getSemester() { return semester; }
+    public void setSemester(String semester) { this.semester = semester; }
+
+    // Convert grade10 to grade4 scale
     public float getGrade4() {
         if (grade10 >= 8.5f) return 4.0f;
         else if (grade10 >= 7.0f) return 3.0f;
@@ -30,6 +37,7 @@ public class Transcript implements Entity {
         else return 0.0f;
     }
 
+    // Get letter grade from grade10
     public String getLetterGrade() {
         if (grade10 >= 8.5f) return "A";
         else if (grade10 >= 7.0f) return "B";
@@ -38,30 +46,38 @@ public class Transcript implements Entity {
         else return "F";
     }
 
+    // Determine pass or fail status
     public String getPassFail() {
         return grade10 >= 4.0f ? "Pass" : "Fail";
     }
 
     @Override
     public String getId() {
-        return student.getStudentId() + "-" + course.getCourseID();
+        // Unique ID: studentId-courseId-semester
+        return student.getStudentId() + "-" + course.getCourseID() + "-" + semester;
     }
 
     @Override
     public void input() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        // Thực tế: nên lấy từ danh sách Student/Course
+        // Input student info
         student = new Student();
-        System.out.println("Nhập thông tin sinh viên:");
+        System.out.println("Enter student information:");
         student.input();
 
+        // Input course info
         course = new Course();
-        System.out.println("Nhập thông tin môn học:");
+        System.out.println("Enter course information:");
         course.input();
 
-        System.out.print("Nhập điểm hệ 10: ");
-        grade10 = Float.parseFloat(sc.nextLine());
+        // Input grade10
+        System.out.print("Enter grade on scale 10: ");
+        grade10 = Float.parseFloat(scanner.nextLine());
+
+        // Input semester
+        System.out.print("Enter semester (e.g. HK1-2024): ");
+        semester = scanner.nextLine();
     }
 
     @Override
@@ -72,6 +88,8 @@ public class Transcript implements Entity {
         System.out.println("Grade (4)    : " + getGrade4());
         System.out.println("Letter Grade : " + getLetterGrade());
         System.out.println("Result       : " + getPassFail());
+        System.out.println("Semester     : " + semester);
+        System.out.println("Course Status: " + course.getStatus());
         System.out.println();
     }
 
@@ -81,6 +99,8 @@ public class Transcript implements Entity {
                " | Grade10: " + grade10 +
                " | Grade4: " + getGrade4() +
                " | Letter: " + getLetterGrade() +
-               " | Result: " + getPassFail();
+               " | Result: " + getPassFail() +
+               " | Semester: " + semester +
+               " | Status: " + course.getStatus();
     }
 }
