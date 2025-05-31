@@ -83,7 +83,7 @@ public class App {
                             System.out.print("Enter course ID to delete: ");
                             String id = sc.nextLine();
                             if (courseCRUD.delete(id)) {
-                                courses.removeIf(co -> co.getCourseId().equalsIgnoreCase(id));
+                                courses.removeIf(co -> co.getCourseID().equalsIgnoreCase(id));
                                 System.out.println("Deleted.");
                             } else {
                                 System.out.println("Not found.");

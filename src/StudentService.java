@@ -31,7 +31,7 @@ public class StudentService {
         // Lọc các transcript của sinh viên đó
         List<String> courseIds = transcripts.stream()
                 .filter(t -> studentId.equalsIgnoreCase(t.getStudent().getStudentId()))
-                .map(Transcript::getCourseId)
+                .map(t -> t.getCourse().getCourseID())
                 .distinct()
                 .collect(Collectors.toList());
 
@@ -42,7 +42,7 @@ public class StudentService {
 
         // Lọc các course trong danh sách đã lấy được
         List<Course> filteredCourses = courses.stream()
-                .filter(c -> courseIds.contains(c.getCourseId()))
+                .filter(c -> courseIds.contains(c.getCourseID()))
                 .collect(Collectors.toList());
 
         filteredCourses.forEach(c -> System.out.println(c));
@@ -68,16 +68,16 @@ public class StudentService {
         for (Transcript t : transcriptsInSemester) {
             Student s = t.getStudent();
             Course c = courses.stream()
-                    .filter(course -> course.getCourseId().equalsIgnoreCase(t.getCourseId()))
+                    .filter(course -> course.getCourseID().equalsIgnoreCase(t.getCourse().getCourseID()))
                     .findFirst().orElse(null);
 
-            String studentName = (s != null) ? s.getStudentName() : "Unknown";
-            String courseName = (c != null) ? c.getCourseName() : t.getCourseName();
+            String studentName = (s != null) ? s.getName() : "Unknown";
+            String courseName = (c != null) ? c.getCourseName() : "Unknown";
 
             System.out.printf("%-10s %-20s %-10s %-20s %-7.2f %-7.2f %-7s %-10s\n",
                     s.getStudentId(), studentName,
-                    t.getCourseId(), courseName,
-                    t.getGrade10(), t.getGrade4(), t.getGrade(), t.getStatus());
+                    t.getCourse().getCourseID(), courseName,
+                    t.getGrade10(), t.getGrade4(), t.getLetterGrade(), t.getPassFail());
         }
     }
 }
