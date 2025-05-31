@@ -28,7 +28,7 @@ public class Transcript implements Entity {
     public String getSemester() { return semester; }
     public void setSemester(String semester) { this.semester = semester; }
 
-    // Convert grade10 to grade4 scale
+    // Chuyển đổi điểm hệ 10 sang hệ 4
     public float getGrade4() {
         if (grade10 >= 8.5f) return 4.0f;
         else if (grade10 >= 7.0f) return 3.0f;
@@ -37,7 +37,7 @@ public class Transcript implements Entity {
         else return 0.0f;
     }
 
-    // Get letter grade from grade10
+    // Lấy điểm chữ từ điểm 10
     public String getLetterGrade() {
         if (grade10 >= 8.5f) return "A";
         else if (grade10 >= 7.0f) return "B";
@@ -46,14 +46,28 @@ public class Transcript implements Entity {
         else return "F";
     }
 
-    // Determine pass or fail status
+    // Xác định Pass hoặc Fail
     public String getPassFail() {
         return grade10 >= 4.0f ? "Pass" : "Fail";
     }
 
+    // ---  Lấy trạng thái khóa học của sinh viên ---
+    public String getStatus() {
+        // Kiểm tra có điểm hay chưa
+        boolean hasGrade = grade10 > 0 && !"N/A".equalsIgnoreCase(getLetterGrade());
+
+        if (!hasGrade) {
+            return "Studying";     // Đang học, chưa có điểm
+        } else if (grade10 < 5.0f || "Fail".equalsIgnoreCase(getPassFail())) {
+            return "Retaking";    // Học lại
+        } else {
+            return "Completed";   // Hoàn thành
+        }
+    }
+
     @Override
     public String getId() {
-        // Unique ID: studentId-courseId-semester
+        // ID duy nhất: studentId-courseId-semester
         return student.getStudentId() + "-" + course.getCourseID() + "-" + semester;
     }
 
@@ -61,21 +75,21 @@ public class Transcript implements Entity {
     public void input() {
         Scanner scanner = new Scanner(System.in);
 
-        // Input student info
+        // Nhập thông tin sinh viên
         student = new Student();
         System.out.println("Enter student information:");
         student.input();
 
-        // Input course info
+        // Nhập thông tin môn học
         course = new Course();
         System.out.println("Enter course information:");
         course.input();
 
-        // Input grade10
+        // Nhập điểm hệ 10
         System.out.print("Enter grade on scale 10: ");
         grade10 = Float.parseFloat(scanner.nextLine());
 
-        // Input semester
+        // Nhập học kỳ
         System.out.print("Enter semester (e.g. HK1-2024): ");
         semester = scanner.nextLine();
     }
@@ -89,7 +103,7 @@ public class Transcript implements Entity {
         System.out.println("Letter Grade : " + getLetterGrade());
         System.out.println("Result       : " + getPassFail());
         System.out.println("Semester     : " + semester);
-        System.out.println("Course Status: " + course.getStatus());
+        System.out.println("Status       : " + getStatus());
         System.out.println();
     }
 
@@ -101,6 +115,6 @@ public class Transcript implements Entity {
                " | Letter: " + getLetterGrade() +
                " | Result: " + getPassFail() +
                " | Semester: " + semester +
-               " | Status: " + course.getStatus();
+               " | Status: " + getStatus();
     }
 }
