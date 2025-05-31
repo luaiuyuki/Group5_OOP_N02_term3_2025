@@ -42,7 +42,7 @@ public class Course implements Entity {
         courseName = sc.nextLine();
         System.out.print("Enter credits: ");
         credits = Integer.parseInt(sc.nextLine());
-        System.out.print("Enter status (Học đi / Học lại): ");
+        System.out.print("Enter status (Studying / Retaking/ Completed): ");
         status = sc.nextLine();
     }
 
