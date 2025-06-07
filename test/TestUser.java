@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class TestUser {
     public static void main(String[] args) {
-        // Tạo user mẫu
-        User u1 = new User("U001", "alice", "pass123", "admin");
-        User u2 = new User("U002", "mary", "123456", "student");
-
         Scanner scanner = new Scanner(System.in);
+
+        // Khởi tạo danh sách user
+        ListUser userList = new ListUser();
+        userList.addUser(new User("U001", "alice", "pass123", "admin"));
+        userList.addUser(new User("U002", "mary", "123456", "student"));
 
         System.out.println("==== USER LOGIN ====");
         System.out.print("Username: ");
@@ -17,17 +18,18 @@ public class TestUser {
 
         User loggedInUser = null;
 
-        // Kiểm tra đăng nhập
-        if (u1.getUsername().equals(inputUsername) && u1.getPassword().equals(inputPassword)) {
-            loggedInUser = u1;
-        } else if (u2.getUsername().equals(inputUsername) && u2.getPassword().equals(inputPassword)) {
-            loggedInUser = u2;
+        // Kiểm tra đăng nhập từ danh sách user
+        for (User u : userList.getUsers()) {
+            if (u.getUsername().equals(inputUsername) && u.getPassword().equals(inputPassword)) {
+                loggedInUser = u;
+                break;
+            }
         }
 
         if (loggedInUser != null) {
             System.out.println("Login successful! Role: " + loggedInUser.getRole());
 
-            // Phân quyền menu
+            // Phân quyền theo vai trò
             if (loggedInUser.getRole().equalsIgnoreCase("admin")) {
                 System.out.println("===== ADMIN MENU =====");
                 System.out.println("1. Manage Students");
