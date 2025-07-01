@@ -65,6 +65,8 @@ Hệ thống phản hồi và hiển thị lại danh sách
 
 **1.2 UML Sequence Diagram**
 
+![Untitled (5)](https://github.com/user-attachments/assets/fe07778d-e1c6-4d8d-a44d-5dac8cc1398c)
+
 ![Untitled (1)](https://github.com/user-attachments/assets/2c36ae5d-9858-4cd4-a895-06d47c060f59)
 
 ![Untitled (3)](https://github.com/user-attachments/assets/427da5f2-d289-40cc-bdcf-64ee545750b5)
