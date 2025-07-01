@@ -27,9 +27,19 @@ Project 05: Xây dựng ứng dụng quản lý sinh viên
 # Cụ thể:
 - **Quản lý sinh viên**:
 
-    + Thêm, sửa, xoá sinh viên.
+    + Xem danh sách sinh viên
 
-    + Liệt kê thông tin về sinh viên, có thể lọc ra các sinh viên theo chuyên ngành hoặc giới tính.
+Thêm mới sinh viên
+
+Sửa thông tin sinh viên
+
+Xoá sinh viên
+
+Lưu dữ liệu
+
+Hệ thống phản hồi và hiển thị lại danh sách
+
+    
 
 - **Quản lý môn học**:
 
