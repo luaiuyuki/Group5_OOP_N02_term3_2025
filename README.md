@@ -69,7 +69,7 @@ Hệ thống phản hồi và hiển thị lại danh sách
 
 ![Untitled (3)](https://github.com/user-attachments/assets/427da5f2-d289-40cc-bdcf-64ee545750b5)
 
-
+![Untitled (4)](https://github.com/user-attachments/assets/c36198fc-882d-40ec-8ef2-609d28f299f4)
 
 
 
