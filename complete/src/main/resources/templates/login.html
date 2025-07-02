@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in to Sakura University</title>
+    <style>
+        :root {
+            --pink-light: #fdf2f8;
+            --pink-main: #ec4899;
+            --pink-dark: #db2777;
+            --gray-border: #d1d5db;
+            --gray-bg: #f9fafb;
+            --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: var(--font);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--gray-bg);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 360px;
+            padding: 24px;
+            background-color: white;
+            border: 1px solid var(--gray-border);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            font-size: 42px;
+            color: var(--pink-main);
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            color: #1f2937;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 15px;
+            border: 1px solid var(--gray-border);
+            border-radius: 8px;
+            background-color: #fff;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--pink-main);
+            outline: none;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 14px;
+            color: #6b7280;
+            user-select: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--pink-main);
+            color: white;
+            border: none;
+            font-size: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--pink-dark);
+        }
+
+        .error-msg {
+            color: #dc2626;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">🌸</div>
+    <h2>Sign in to Sakura University</h2>
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword()">👁</span>
+        </div>
+        <button type="submit">Sign in</button>
+        <p th:if="${error}" th:text="${error}" class="error-msg"></p>
+    </form>
+</div>
+
+<script>
+    function togglePassword() {
+        const pwd = document.getElementById("password");
+        const type = pwd.getAttribute("type") === "password" ? "text" : "password";
+        pwd.setAttribute("type", type);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="p-3">
+  <h3 class="text-center fw-semibold mb-4" style="color: #d63384;">
+    📚 <span style="letter-spacing: 1px;">COURSE LIST</span>
+  </h3>
+
+  <table class="table table-bordered table-striped shadow-sm" style="
+    border-radius: 16px;
+    overflow: hidden;
+    border-color: #f8d7e4;
+    background-color: #fff7fa;
+  ">
+    <thead style="background-color: #fde6ef; color: #d63384;" class="text-uppercase">
+      <tr>
+        <th>Course ID</th>
+        <th>Course Name</th>
+        <th class="text-center">Credits</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="course : ${courses}">
+        <td th:text="${course.courseID}"></td>
+        <td th:text="${course.courseName}"></td>
+        <td class="text-center" th:text="${course.credits}"></td> <!-- Only this column centered -->
+        <td th:text="${course.status}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

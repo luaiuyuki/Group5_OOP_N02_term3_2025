@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fef6f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fde2e4;
+            border-radius: 16px;
+            padding: 20px 60px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        .header-bar img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .signout-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .card {
+            border-radius: 16px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            border-radius: 12px;
+        }
+
+        .action-buttons a {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+
+    <!-- Header -->
+    <div class="header-bar">
+        <div class="center-group">
+            <span class="flower">🌸</span>
+            <div class="header-title">COURSE</div>
+            <span class="flower">🌸</span>
+        </div>
+        <a href="/home" class="signout-btn">Sign Out</a>
+    </div>
+
+    <style>
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 12px 24px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .center-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .flower {
+            font-size: 40px;
+        }
+
+        .header-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #d63384;
+            text-transform: uppercase;
+        }
+
+        .signout-btn {
+            padding: 8px 16px;
+            font-weight: bold;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .signout-btn:hover {
+            background-color: #e055a0;
+        }
+    </style>
+
+    <!-- Form thêm/sửa khóa học -->
+    <div class="card mb-4">
+        <div class="card-header" th:text="${editing} ? 'Edit Course' : 'Add Course'"></div>
+        <div class="card-body">
+            <form th:action="@{/course/save}" method="post">
+                <input type="hidden" name="editing" th:value="${editing}" />
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Course ID</label>
+                        <input type="text" class="form-control" name="courseID"
+                               th:value="${course?.courseID}" th:readonly="${editing}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Course Name</label>
+                        <input type="text" class="form-control" name="courseName"
+                               th:value="${course?.courseName}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Credits</label>
+                        <input type="number" class="form-control" name="credits"
+                               th:value="${course?.credits}" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Status</label>
+                        <select class="form-select" name="status">
+                            <option value="Ongoing" th:selected="${course?.status == 'Ongoing'}">Ongoing</option>
+                            <option value="Completed" th:selected="${course?.status == 'Completed'}">Completed</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary" th:text="${editing} ? 'Update' : 'Save'"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Danh sách khóa học -->
+    <table class="table table-striped table-bordered">
+        <thead class="table-light">
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Credits</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="course : ${courses}">
+            <td th:text="${course.courseID}"></td>
+            <td th:text="${course.courseName}"></td>
+            <td th:text="${course.credits}"></td>
+            <td th:text="${course.status}"></td>
+            <td class="action-buttons">
+                <a th:href="@{'/course/edit/' + ${course.courseID}}" class="btn btn-sm btn-warning">Edit</a>
+                <a th:href="@{'/course/delete/' + ${course.courseID}}" class="btn btn-sm btn-danger"
+                   onclick="return confirm('Delete this course?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+ 

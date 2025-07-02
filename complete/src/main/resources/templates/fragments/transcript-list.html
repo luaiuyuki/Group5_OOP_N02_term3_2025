@@ -1,0 +1,48 @@
+<div class="p-3">
+  <!-- Tiêu đề bảng -->
+  <h3 class="text-center fw-semibold mb-4" style="color: #d63384;">
+     🧾 <span style="letter-spacing: 1px;">TRANSCRIPT LIST</span> 🧾
+  </h3>
+
+  <!-- Bọc bảng trong div có overflow -->
+  <div style="overflow-x: auto;">
+    <table class="table table-bordered table-striped shadow-sm" style="
+      border-radius: 16px;
+      overflow: hidden;
+      border-color: #f8d7e4;
+      background-color: #fff;
+      width: 100%;
+      table-layout: auto;
+      min-width: 1000px; /* Đặt tối thiểu cho bảng để tránh vỡ layout */
+    ">
+      <thead style="background-color: #fde6ef; color: #d63384;" class="text-uppercase text-center">
+        <tr>
+          <th style="white-space: nowrap;">ID</th>
+          <th style="white-space: nowrap;">Student ID</th>
+          <th style="white-space: nowrap;">Student Name</th>
+          <th style="white-space: nowrap;">Course ID</th>
+          <th style="white-space: nowrap; min-width: 150px;">Course Name</th>
+          <th style="white-space: nowrap;">Grade (10)</th>
+          <th style="white-space: nowrap;">Grade (4.0)</th>
+          <th style="white-space: nowrap;">Letter</th>
+          <th style="white-space: nowrap;">Status</th>
+          <th style="white-space: nowrap;">Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="transcript : ${transcripts}">
+          <td style="white-space: nowrap;" th:text="${transcript.id}"></td>
+          <td style="white-space: nowrap;" th:text="${transcript.student.studentId}"></td>
+          <td style="white-space: nowrap;" th:text="${transcript.student.fullname}"></td>
+          <td style="white-space: nowrap;" th:text="${transcript.course.courseID}"></td>
+          <td style="white-space: nowrap;" th:text="${transcript.course.courseName}"></td>
+          <td class="text-center" style="white-space: nowrap;" th:text="${transcript.grade10}"></td>
+          <td class="text-center" style="white-space: nowrap;" th:text="${transcript.grade4}"></td>
+          <td class="text-center" style="white-space: nowrap;" th:text="${transcript.letterGrade}"></td>
+          <td class="text-center" style="white-space: nowrap;" th:text="${transcript.status}"></td>
+          <td style="white-space: nowrap;" th:text="${transcript.semester}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

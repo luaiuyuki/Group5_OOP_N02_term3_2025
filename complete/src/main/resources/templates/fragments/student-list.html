@@ -1,0 +1,31 @@
+<div class="p-3">
+  <h3 class="text-center fw-semibold mb-4" style="color: #d63384;">
+    📋 <span style="letter-spacing: 1px;">STUDENT LIST</span>
+  </h3>
+
+  <table class="table table-bordered table-striped shadow-sm" style="
+    border-radius: 16px;
+    overflow: hidden;
+    border-color: #f8d7e4;
+    background-color: #fff7fa;
+  ">
+    <thead style="background-color: #fde6ef; color: #d63384;" class="text-uppercase">
+      <tr>
+        <th>Student ID</th>
+        <th>Full Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th>Major</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="student : ${students}">
+        <td th:text="${student.studentId}"></td>
+        <td th:text="${student.fullname}"></td>
+        <td th:text="${student.gender}"></td>
+        <td th:text="${student.dateOfBirth}"></td>
+        <td th:text="${student.major}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

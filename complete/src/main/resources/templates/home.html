@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sakura University Portal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff0f5;
+        }
+
+        .header {
+            background-color: #ffe4ec;
+            color: #c71585;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo::before {
+            content: '🌸';
+            margin-right: 10px;
+        }
+
+        .logout-btn {
+            background-color: #f06292;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #e91e63;
+        }
+
+        .container {
+            padding: 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: white;
+            width: 200px;
+            height: 150px;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #d81b60;
+            font-size: 18px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">Sakura University</div>
+    <form th:action="@{/logout}" method="get">
+        <button class="logout-btn" type="submit">Sign out</button>
+    </form>
+</div>
+
+<div class="container">
+    <div class="card" onclick="location.href='/student'">Student</div>
+    <div class="card" onclick="location.href='/course'">Course</div>
+    <div class="card" onclick="location.href='/transcript'">Transcript</div>
+    <div class="card" onclick="location.href='/student-manager'">Student Manager</div>
+</div>
+
+</body>
+</html>

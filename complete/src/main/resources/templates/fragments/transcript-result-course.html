@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Transcript Result</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #fff6fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    th, td {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+    }
+
+    .form-control {
+      padding: 10px 14px;
+      font-size: 15px;
+    }
+
+    label.form-label {
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .card-body .row > div {
+      padding-right: 12px;
+      padding-left: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div th:fragment="transcriptTableCourse">
+  <div class="container py-4">
+
+    <!-- BẢNG HIỂN THỊ TRANSCRIPTS -->
+    <div style="overflow-x: auto;">
+      <table class="table table-bordered table-striped shadow-sm" style="min-width: 1000px;">
+        <thead class="text-uppercase text-center" style="background-color: #fde6ef; color: #d63384;">
+          <tr>
+            <th>ID</th>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Grade (10)</th>
+            <th>Grade (4.0)</th>
+            <th>Letter</th>
+            <th>Status</th>
+            <th>Semester</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="transcript : ${transcripts}">
+            <td th:text="${transcript.id}"></td>
+            <td th:text="${transcript.student?.studentId}"></td>
+            <td th:text="${transcript.student?.fullname}"></td>
+            <td th:text="${transcript.course?.courseID}"></td>
+            <td th:text="${transcript.course?.courseName}"></td>
+            <td th:text="${transcript.grade10}" class="text-center"></td>
+            <td th:text="${transcript.grade4}" class="text-center"></td>
+            <td th:text="${transcript.letterGrade}" class="text-center"></td>
+            <td th:text="${transcript.status}" class="text-center"></td>
+            <td th:text="${transcript.semester}"></td>
+            <td class="text-center">
+              <a th:href="@{/ajax-transcript/edit/{id}(id=${transcript.id})}" class="btn btn-sm btn-warning edit-btn">✏️</a>
+              <a th:href="@{|/ajax-transcript/delete/${transcript.id}?courseID=${transcript.course.courseID}|}" class="btn btn-sm btn-danger delete-btn">🗑️</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FORM THÊM / SỬA -->
+    <div class="card mt-5 shadow-sm" style="background-color: #fff0f5;">
+      <div class="card-header text-center text-danger-emphasis fs-5" th:text="${editing} ? 'Edit Transcript' : 'Add Transcript'">Add Transcript</div>
+      <div class="card-body">
+        <form th:action="@{/ajax-transcript/save}" method="post" class="row g-4 transcript-form" onsubmit="submitAjaxTranscript(event)">
+          <input type="hidden" name="editing" th:value="${editing}" />
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="form-label">Transcript ID</label>
+              <input type="text" class="form-control" name="id" th:value="${transcript?.id}" th:readonly="${editing}" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Student ID</label>
+              <input type="text" class="form-control" name="student.studentId" th:value="${transcript?.student?.studentId}" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Course ID</label>
+              <input type="text" class="form-control" name="course.courseID" th:value="${transcript?.course?.courseID}" required>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-md-3">
+              <label class="form-label">Grade (10-point)</label>
+              <input type="number" step="0.01" min="0" max="10" class="form-control" name="grade10" th:value="${transcript?.grade10}" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Grade (4.0)</label>
+              <input type="text" class="form-control" th:value="${transcript?.grade4}" readonly>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Letter Grade</label>
+              <input type="text" class="form-control" th:value="${transcript?.letterGrade}" readonly>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Status</label>
+              <input type="text" class="form-control" th:value="${transcript?.status}" readonly>
+            </div>
+          </div>
+
+          <div class="col-md-6 mt-3">
+            <label class="form-label">Semester</label>
+            <input type="text" class="form-control" name="semester" th:value="${transcript?.semester}" required>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn text-white px-5" style="background-color: #d63384;">
+              <span th:text="${editing} ? 'Update' : 'Add'">Add</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function submitAjaxTranscript(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("transcriptResult").innerHTML = html;
+      rebindAjaxButtons();
+    });
+  }
+
+  function rebindAjaxButtons() {
+    document.querySelectorAll(".edit-btn").forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        fetch(this.href)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("transcriptResult").innerHTML = html;
+            rebindAjaxButtons();
+          });
+      });
+    });
+
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (confirm("Delete this record?")) {
+          fetch(this.href)
+            .then(res => res.text())
+            .then(html => {
+              document.getElementById("transcriptResult").innerHTML = html;
+              rebindAjaxButtons();
+            });
+        }
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", rebindAjaxButtons);
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transcript</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fef6f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px 60px;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .center-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .flower {
+            font-size: 40px;
+        }
+
+        .header-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #d63384;
+            text-transform: uppercase;
+        }
+
+        .signout-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 8px 16px;
+            font-weight: bold;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .signout-btn:hover {
+            background-color: #e055a0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn {
+            border-radius: 12px;
+        }
+
+        .action-buttons a {
+            margin-right: 12px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="header-bar">
+        <div class="center-group">
+            <span class="flower">🌸</span>
+            <div class="header-title">TRANSCRIPT</div>
+            <span class="flower">🌸</span>
+        </div>
+        <a href="/home" class="signout-btn">Sign Out</a>
+    </div>
+
+    <!-- Form Add/Edit Transcript -->
+    <div class="card mb-4">
+        <div class="card-header" th:text="${editing} ? 'Edit Transcript' : 'Add Transcript'"></div>
+        <div class="card-body">
+            <form th:action="@{/transcript/save}" method="post">
+                <input type="hidden" name="editing" th:value="${editing}" />
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Transcript ID</label>
+                        <input type="text" class="form-control" name="id"
+                               th:value="${transcript?.id}" th:readonly="${editing}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Student ID</label>
+                        <input type="text" class="form-control" name="student.studentId"
+                               th:value="${transcript?.student?.studentId}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Course ID</label>
+                        <input type="text" class="form-control" name="course.courseID"
+                               th:value="${transcript?.course?.courseID}" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Grade (10-point)</label>
+                        <input type="number" step="0.01" class="form-control" name="grade10"
+                               th:value="${transcript?.grade10}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Grade (4-point)</label>
+                        <input type="text" class="form-control" th:value="${transcript?.grade4}" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Letter Grade</label>
+                        <input type="text" class="form-control" th:value="${transcript?.letterGrade}" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Pass/Fail</label>
+                        <input type="text" class="form-control" th:value="${transcript?.status}" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Semester</label>
+                        <input type="text" class="form-control" name="semester"
+                               th:value="${transcript?.semester}" required>
+                    </div>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary" th:text="${editing} ? 'Update' : 'Save'"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Transcript Table -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Grade 10</th>
+                <th>Grade 4</th>
+                <th>Letter</th>
+                <th>Status</th>
+                <th>Semester</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="transcript : ${transcripts}">
+                <td th:text="${transcript.id}"></td>
+                <td th:text="${transcript.student.studentId}"></td>
+                <td th:text="${transcript.student.fullname}"></td>
+                <td th:text="${transcript.course.courseID}"></td>
+                <td th:text="${transcript.course.courseName}"></td>
+                <td th:text="${transcript.grade10}"></td>
+                <td th:text="${transcript.grade4}"></td>
+                <td th:text="${transcript.letterGrade}"></td>
+                <td th:text="${transcript.status}"></td>
+                <td th:text="${transcript.semester}"></td>
+                <td class="action-buttons">
+                    <a th:href="@{'/transcript/edit/' + ${transcript.id}}" class="btn btn-sm btn-warning">Edit</a>
+                    <a th:href="@{'/transcript/delete/' + ${transcript.id}}" class="btn btn-sm btn-danger"
+                       onclick="return confirm('Delete this transcript?')">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
