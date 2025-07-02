@@ -1,0 +1,75 @@
+# Operating System Files
+
+*.DS_Store
+Thumbs.db
+*.sw?
+.#*
+*#
+*~
+*.sublime-*
+
+# Build Artifacts
+
+.gradle/
+build/
+target/
+bin/
+dependency-reduced-pom.xml
+
+# Eclipse Project Files
+
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA Files
+
+*.iml
+*.ipr
+*.iws
+*.idea
+
+README.html
+# Spring Boot sensitive files
+.env
+application-secret.properties
+src/main/resources/application-secret.properties
+
+# Maven
+.mvn/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# Log files
+*.log
+
+# OS
+*.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+*.class
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VSCode
+.vscode/
+
+
+# Application config sensitive file
+
+
+complete/src/main/resources/application.properties 
