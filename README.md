@@ -77,6 +77,7 @@ Hệ thống phản hồi và hiển thị lại danh sách
 
 ![Untitled (8)](https://github.com/user-attachments/assets/20572093-c4ef-4d70-846a-188338ff0fb4)
 
+![Untitled (9)](https://github.com/user-attachments/assets/a6d17b6f-ecbe-4a4a-ace1-6ff950028919)
 
 
 
