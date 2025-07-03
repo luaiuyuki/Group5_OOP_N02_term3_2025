@@ -95,7 +95,8 @@
 
 **1.1 UML Class Diagram**
 
-![class](https://github.com/user-attachments/assets/41c2bda8-e5c6-4f05-a341-5bd7465676db)
+![class diagram](https://github.com/user-attachments/assets/7baeb75d-6f0e-4c00-bcb3-a1a0411f8756)
+
 
 **1.2 UML Activity Diagram**
 
