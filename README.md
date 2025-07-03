@@ -165,20 +165,29 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### ⚠️Khối bắt lỗi: (Error Handling Block)
 
-• complete\src\main\java\com\example\servingwebcontent\MyException.java:
+• **complete\src\main\java\com\example\servingwebcontent\MyException.java:**
 
 package com.example.servingwebcontent;
 
 public class MyException {
+
     public static void g() {
+    
         throw new RuntimeException("From g()");
+        
     }
+    
     public static void f() {
+    
         g();
+        
     }
     public static void main(String[] args) {
+    
         f();
+        
     }
+    
 }
 
 
