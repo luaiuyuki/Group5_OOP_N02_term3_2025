@@ -50,6 +50,17 @@
    🎓 **STUDENT(Đang phát triển)**: có quyền truy cập hạn chế
 
                 ○ Chỉ xem và theo dõi được thông tin về sinh viên,môn học, bảng điểm của mình.
+
+### 2. Sinh viên:(`Student`)
+
+#### • **Gồm các thuộc tính:** `student_id`, `fullname`, `gender`, `date_of_birth`, `major`
+
+### 3. Môn học:(`Course`)
+
+#### • **Gồm các thuộc tính:** `id`, `student_id`, `course_id`, `grade10`, `semester`
+
+
+                
                 
          
 Thêm mới sinh viên
