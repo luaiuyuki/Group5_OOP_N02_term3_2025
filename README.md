@@ -22,7 +22,7 @@
 
 ## 📌 Giới Thiệu:
 
-Ứng dụng quản lý sinh viên là một ứng dụng console được phát triển bằng ngôn ngữ **Java**, nhằm mô phỏng hệ thống quản lý sinh viên tại các trường đại học.Giao diện được xây dựng trên nền **console** đơn giản, trực quan.Dự án áp dụng mô hình **Lập trình Hướng Đối Tượng (OOP)**, sử dụng các cấu trúc dữ liệu như **ArrayList** để quản lý dữ liệu, và lưu trữ thông tin bằng **file nhị phân**.
+Ứng dụng quản lý sinh viên là một ứng dụng console được phát triển bằng ngôn ngữ **Java**, nhằm mô phỏng hệ thống quản lý sinh viên tại các trường đại học. Giao diện được xây dựng trên nền **console** đơn giản, trực quan. Dự án áp dụng mô hình **Lập trình Hướng Đối Tượng (OOP)**, sử dụng các cấu trúc dữ liệu như **ArrayList** để quản lý dữ liệu, và lưu trữ thông tin bằng **file nhị phân**.
 
 ## 🚀 Mục tiêu dự án:
 
@@ -196,6 +196,18 @@ public class MyException {
 ### 🖥️ Giao diện UI của Admin:(Admin User Interface)
 
 ![giao diện](https://github.com/user-attachments/assets/2f913fa1-bf41-4b61-b3a3-58c0bd53a76d)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🧰 Công nghệ sử dụng:
+
+- Ngôn ngữ lập trình: **Java**.
+- Framework: <b>Java Spring Boot</b>.
+- Cơ sở dữ liệu: **MySQL** (kết nối bằng Spring Data JPA)
+- Tương tác động: **AJAX (jQuery)**.
+- Xử lý nghiệp vụ: **Java OOP** (Object-Oriented Programming)
+
+
 
 
 
