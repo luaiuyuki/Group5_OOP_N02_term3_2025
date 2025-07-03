@@ -122,11 +122,11 @@
 
 ![Untitled (6)](https://github.com/user-attachments/assets/a762ffe6-0958-44a7-860e-1b87ea9253af)
 
-#### 1.2.6 Mục Student Manager trong trang chủ: (Student Manager Section on the Home Page)
+#### 1.2.6. Mục Student Manager trong trang chủ: (Student Manager Section on the Home Page)
 
 ![Untitled (8)](https://github.com/user-attachments/assets/20572093-c4ef-4d70-846a-188338ff0fb4)
 
-#### 1.2.7 Hiển thị toàn bộ danh sách sinh viên trong danh mục của quản lí sinh viên: (View All Students in the Student Manager Menu)
+#### 1.2.7. Hiển thị toàn bộ danh sách sinh viên trong danh mục của quản lí sinh viên: (View All Students in the Student Manager Menu)
 
 ![Untitled (9)](https://github.com/user-attachments/assets/a6d17b6f-ecbe-4a4a-ace1-6ff950028919)
 
