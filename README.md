@@ -57,9 +57,15 @@
 
 ### 3. Môn học:(`Course`)
 
+#### • **Gồm các thuộc tính:** `course_id`, `course_name`, `credits`, `status`
+
+### 4. Bảng điểm(`Transcript`)
+
 #### • **Gồm các thuộc tính:** `id`, `student_id`, `course_id`, `grade10`, `semester`
 
+#### • **Chức năng**: 
 
+               ○ Tự động quy đổi điểm hệ 10 sang hệ 4, điểm chữ, và đánh giá đạt / không đạt
                 
                 
          
