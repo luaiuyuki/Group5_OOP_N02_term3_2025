@@ -109,29 +109,55 @@
 
 ![Untitled (1)](https://github.com/user-attachments/assets/2c36ae5d-9858-4cd4-a895-06d47c060f59)
 
+#### Mục sinh viên trong trang chủ: (Student Section on the Home Page)
+
 ![Untitled (3)](https://github.com/user-attachments/assets/427da5f2-d289-40cc-bdcf-64ee545750b5)
+
+#### Mục môn học trong trang chủ: (Course Section on the Home Page)
 
 ![Untitled (4)](https://github.com/user-attachments/assets/c36198fc-882d-40ec-8ef2-609d28f299f4)
 
+#### Mục môn học trong trang chủ: (Transcript Section on the Home Page)
+
 ![Untitled (6)](https://github.com/user-attachments/assets/a762ffe6-0958-44a7-860e-1b87ea9253af)
+
+#### Mục Student Manager trong trang chủ: (Student Manager Section on the Home Page)
 
 ![Untitled (8)](https://github.com/user-attachments/assets/20572093-c4ef-4d70-846a-188338ff0fb4)
 
+#### Hiển thị toàn bộ danh sách sinh viên trong danh mục của quản lí sinh viên: (View All Students in the Student Manager Menu)
+
 ![Untitled (9)](https://github.com/user-attachments/assets/a6d17b6f-ecbe-4a4a-ace1-6ff950028919)
+
+#### Hiển thị toàn bộ danh sách môn học trong danh mục của quản lí sinh viên: (View All Courses in the Student Manager Menu)
 
 ![Untitled (10)](https://github.com/user-attachments/assets/a70cfd1d-53d3-457d-b82b-9f9dd76f31e5)
 
+#### Hiển thị toàn bộ danh sách môn học trong danh mục của quản lí sinh viên: (View All Transcripts in the Student Manager Menu)
+
 ![Untitled (11)](https://github.com/user-attachments/assets/fe5e4522-5ebc-4d55-a224-6681a551af5d)
+
+#### Tìm kiếm sinh viên trong danh mục của quản lí sinh viên: (Search Student in the Student Manager Menu)
 
 ![Untitled (12)](https://github.com/user-attachments/assets/c971c5cb-b750-4f0d-afae-121ff22c9889)
 
+#### Hiển thị và thêm sửa xóa bảng điểm sau khi tìm kiếm sinh viên:
+
 ![Untitled (13)](https://github.com/user-attachments/assets/b3d18982-d21f-4523-bff5-7466270ee0e7)
+
+#### Tìm kiếm môn học trong danh mục của quản lí sinh viên: (Search Course in the Student Manager Menu)
 
 ![Untitled (14)](https://github.com/user-attachments/assets/10146d41-04a2-44ff-b568-37341d7274c3)
 
+#### Hiển thị và thêm sửa xóa bảng điểm sau khi tìm kiếm môn học:
+
 ![Untitled (15)](https://github.com/user-attachments/assets/2a99b2ee-4be9-4897-9980-0fb1f34c3e95)
 
+#### Tìm kiếm bảng điểm trong danh mục của quản lí sinh viên: (Search Transcript in the Student Manager Menu)
+
 ![Untitled (16)](https://github.com/user-attachments/assets/c5d9e936-1b47-4beb-a9c1-321ab4c9f350)
+
+#### Hiển thị và thêm sửa xóa bảng điểm sau khi tìm kiếm bảng điểm:
 
 ![Untitled (17)](https://github.com/user-attachments/assets/2c8c4aff-8cc4-4da2-9de7-6b8f00112781)
 
