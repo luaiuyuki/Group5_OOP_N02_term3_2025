@@ -1,5 +1,6 @@
-📘 Project Nhóm 5: Quản Lý Sinh Viên
----------------------------------------------------------
+### 📘 Project Nhóm 5: Quản Lý Sinh Viên
+*Dự án cuối kỳ môn Lập trình Hướng Đối Tượng (OOP)*
+
 
 # 👥 Thành viên nhóm:
 
