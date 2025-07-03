@@ -207,15 +207,16 @@ public class MyException {
 - Tương tác động: **AJAX (jQuery)**.
 - Xử lý nghiệp vụ: **Java OOP** (Object-Oriented Programming)
 
+## 📚 Tài liệu tham khảo:
 
+- Java Tutorials (Oracle)
+- Tài liệu học của cô Thu tải trên canvas.
+- W3Schools Online Web Tutorials.
+- Spring Boot Documentation.
 
+## 🌐 Application Deployment Link:
 
-
-
-
-
-
-https://group5oopn02term32025-production.up.railway.app/
+**Deployment URL:** https://group5oopn02term32025-production.up.railway.app/
 
 
 
