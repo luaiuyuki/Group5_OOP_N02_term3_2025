@@ -55,9 +55,18 @@
 
 #### • **Gồm các thuộc tính:** `student_id`, `fullname`, `gender`, `date_of_birth`, `major`
 
+
+#### • **Chức năng**:
+
+                ○ Thêm mới sinh viên, Sửa thông tin sinh viên, Xoá sinh viên, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách sinh viên. 
+
 ### 3. Môn học:(`Course`)
 
 #### • **Gồm các thuộc tính:** `course_id`, `course_name`, `credits`, `status`
+
+#### • **Chức năng**:
+
+                ○ Thêm mới môn học, Sửa thông tin môn học, Xoá môn học, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách môn học.
 
 ### 4. Bảng điểm(`Transcript`)
 
@@ -65,37 +74,22 @@
 
 #### • **Chức năng**: 
 
-               ○ Tự động quy đổi điểm hệ 10 sang hệ 4, điểm chữ, và đánh giá đạt / không đạt
-                
-                
-         
-Thêm mới sinh viên
+               ○ Tự động quy đổi điểm hệ 10 sang hệ 4, điểm chữ, và đánh giá đạt / không đạt.
+               ○ Thêm mới bảng điểm, Sửa thông tin bảng điểm, Xoá bảng điểm, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách bảng điểm.
 
-Sửa thông tin sinh viên
+### ⚙️ Phương thức hoạt động chính:
 
-Xoá sinh viên
+#### Student Manager:
 
-Lưu dữ liệu
-
-Hệ thống phản hồi và hiển thị lại danh sách
-
-    
-
-- **Quản lý môn học**:
-
-    + Thêm, sửa, xóa môn học.
-
-- **Quản lý bảng điểm**:
-
-    + Thêm, sửa, xóa điểm.
-
-    + Tự động quy đổi điểm hệ 10 sang hệ 4, điểm chữ, và đánh giá đạt / không đạt.
-
-- Có chức năng đăng ký sinh viên vào các khóa học tương ứng.
-
+     • Hiển thị toàn bộ danh sách sinh viên, danh sách môn học, danh sách bảng điểm và theo dõi thông tin.
+     • Tìm kiếm bảng điểm bằng mã sinh viên, mã môn học, tên học kì, tích hợp CRUD bảng điểm sau khi tìm kiếm.
+     • Có chức năng đăng ký sinh viên vào các khóa học tương ứng.
+     
 - Dữ liệu được lưu trữ xuống file nhị phân.
 - Cần tạo các lớp liên quan đến “Sinh viên”, “Môn học”, “Bảng điểm” để đọc, ghi dữ liệu vào một hoặc nhiều file.
 - Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map, ....
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Sơ đồ khối yêu cầu
 
