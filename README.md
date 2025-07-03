@@ -35,8 +35,8 @@
 
 ## Cụ thể:
 
-- **Người dùng**:
-+ **Gồm các thuộc tính:** `username`, `password`, `role`
+**1.Người dùng**:
+    • **Gồm các thuộc tính:** `username`, `password`, `role`
 
 Thêm mới sinh viên
 
