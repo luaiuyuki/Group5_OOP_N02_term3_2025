@@ -35,11 +35,11 @@
 
 # 📌 Cụ thể:
 
-## 1. Người dùng:(`User`)
+### 1. Người dùng:(`User`)
 
-### • **Gồm các thuộc tính:** `username`, `password`, `role`
+#### • **Gồm các thuộc tính:** `username`, `password`, `role`
 
-### • **Chức năng**:
+#### • **Chức năng**:
 
    🔑 **ADMIN**
    
