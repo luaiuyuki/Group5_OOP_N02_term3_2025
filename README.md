@@ -197,6 +197,11 @@ public class MyException {
 
 ![giao diện](https://github.com/user-attachments/assets/2f913fa1-bf41-4b61-b3a3-58c0bd53a76d)
 
+### 📁 Cấu trúc thư mục:
+
+[Group5_OOP_N02_term3_2025-main.zip](https://github.com/user-attachments/files/21039134/Group5_OOP_N02_term3_2025-main.zip)
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 🧰 Công nghệ sử dụng:
