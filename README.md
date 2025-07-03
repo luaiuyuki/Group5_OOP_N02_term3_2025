@@ -58,7 +58,7 @@
 
 #### • **Chức năng**:
 
-       ○ Thêm mới sinh viên, Sửa thông tin sinh viên, Xoá sinh viên, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách sinh viên. 
+       ○ Thêm mới sinh viên, Sửa, Xóa thông tin sinh viên, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách sinh viên. 
 
 ### 3. Môn học:(`Course`)
 
@@ -66,7 +66,7 @@
 
 #### • **Chức năng**:
 
-       ○ Thêm mới môn học, Sửa thông tin môn học, Xoá môn học, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách môn học.
+       ○ Thêm mới môn học, Sửa,Xóa thông tin môn học, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách môn học.
 
 ### 4. Bảng điểm(`Transcript`)
 
@@ -75,7 +75,7 @@
 #### • **Chức năng**: 
 
        ○ Tự động quy đổi điểm hệ 10 sang hệ 4, điểm chữ, và đánh giá đạt / không đạt.
-       ○ Thêm mới bảng điểm, Sửa thông tin bảng điểm, Xoá bảng điểm, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách bảng điểm.
+       ○ Thêm mới bảng điểm, Sửa,Xóa thông tin bảng điểm, Lưu dữ liệu, Hệ thống phản hồi và hiển thị lại danh sách bảng điểm.
 
 ### ⚙️ Phương thức hoạt động chính:
 
