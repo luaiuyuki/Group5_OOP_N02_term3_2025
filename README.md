@@ -163,6 +163,7 @@
 ![Untitled (17)](https://github.com/user-attachments/assets/2c8c4aff-8cc4-4da2-9de7-6b8f00112781)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### ⚠️Khối bắt lỗi: (Error Handling Block)
 
 • **complete\src\main\java\com\example\servingwebcontent\MyException.java:**
@@ -189,6 +190,16 @@ public class MyException {
         
     }  
 }
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Giao diện UI của Admin:(Admin User Interface)
+
+![giao diện](https://github.com/user-attachments/assets/2f913fa1-bf41-4b61-b3a3-58c0bd53a76d)
+
+
+
+
 
 
 
