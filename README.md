@@ -2,7 +2,7 @@
 
 *Dự án cuối kỳ môn Lập trình Hướng Đối Tượng (OOP)*
 
-*Giảng viên: Nguyễn Lệ Thu
+*Giảng viên: Nguyễn Lệ Thu*
 
 ## 👥 Thành viên nhóm:
 
