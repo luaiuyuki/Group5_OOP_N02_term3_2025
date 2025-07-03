@@ -31,6 +31,8 @@
 - Và các chức năng khác(tìm kiếm, CRUD).
 - Lưu trữ và truy xuất dữ liệu thông qua hệ quản trị cơ sở dữ liệu **MySQL**.
 
+----------------------------------------------------
+
 # Cụ thể:
 - **Quản lý sinh viên**:
 
