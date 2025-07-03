@@ -95,7 +95,8 @@ Hệ thống phản hồi và hiển thị lại danh sách
 
 **1.1 UML Class Diagram**
 
-![ẢNH STUDENT](https://github.com/user-attachments/assets/a6998f6a-7109-4c8b-8a08-d3e44bb9ff25)
+![class](https://github.com/user-attachments/assets/41c2bda8-e5c6-4f05-a341-5bd7465676db)
+
 
 **1.2 UML Sequence Diagram**
 
