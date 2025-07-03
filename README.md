@@ -35,10 +35,10 @@
 
 ## 📌 Cụ thể:
 
-### 1. Người dùng:
+### 1. Người dùng:(`User`)
 
 • **Gồm các thuộc tính:** `username`, `password`, `role`
-
+• **Chức năng**
 Thêm mới sinh viên
 
 Sửa thông tin sinh viên
