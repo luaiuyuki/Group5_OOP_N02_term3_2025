@@ -20,15 +20,15 @@
 
 ----------------------------------------------------
 
-## 🧾 Tên Dự Án
+## 📌 Giới Thiệu:
 
-Project 05: Xây dựng ứng dụng quản lý sinh viên
+Ứng dụng quản lý sinh viên là một ứng dụng console được phát triển bằng ngôn ngữ **Java**, nhằm mô phỏng hệ thống quản lý sinh viên tại các trường đại học.Giao diện được xây dựng trên nền **console** đơn giản, trực quan.Dự án áp dụng mô hình **Lập trình Hướng Đối Tượng (OOP)**, sử dụng các cấu trúc dữ liệu như **ArrayList** để quản lý dữ liệu, và lưu trữ thông tin bằng **file nhị phân**.
 
-## 🎯 Yêu cầu chính:
+## 🚀 Mục tiêu dự án:
 
 - Giao diện <b>Java Spring Boot</b>.
 - Có chức năng quản lý sinh viên, môn học và bảng điểm.
-- Và các chức năng khác.
+- Và các chức năng khác(tìm kiếm, CRUD).
 
 # Cụ thể:
 - **Quản lý sinh viên**:
