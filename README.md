@@ -162,6 +162,26 @@
 
 ![Untitled (17)](https://github.com/user-attachments/assets/2c8c4aff-8cc4-4da2-9de7-6b8f00112781)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### ⚠️Khối bắt lỗi: (Error Handling Block)
+
+• complete\src\main\java\com\example\servingwebcontent\MyException.java:
+
+package com.example.servingwebcontent;
+
+public class MyException {
+    public static void g() {
+        throw new RuntimeException("From g()");
+    }
+    public static void f() {
+        g();
+    }
+    public static void main(String[] args) {
+        f();
+    }
+}
+
+
 
 https://group5oopn02term32025-production.up.railway.app/
 
