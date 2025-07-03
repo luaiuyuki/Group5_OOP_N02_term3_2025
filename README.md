@@ -167,8 +167,8 @@
 
 • **complete\src\main\java\com\example\servingwebcontent\MyException.java:**
 
-package com.example.servingwebcontent;
 
+package com.example.servingwebcontent;
 public class MyException {
 
     public static void g() {
@@ -186,8 +186,7 @@ public class MyException {
     
         f();
         
-    }
-    
+    }  
 }
 
 
