@@ -41,11 +41,11 @@
 
 #### • **Chức năng**:
 
-   🔑 **ADMIN**
+   🔑 **ADMIN**: có quyền truy cập đầy đủ vào hệ thống
    
-                ○ Thêm, sửa, xóa :sinh viên, môn học, bảng điểm.
+                ○ Thêm, sửa, xóa dữ liệu: sinh viên, môn học, bảng điểm.
                 ○ Xem toàn bộ danh sách sinh viên, môn học, bảng điểm.
-                ○ Tìm kiếm bảng điểm, sinh viên, môn học để CRUD.
+                ○ Tìm kiếm bảng điểm, sinh viên, môn học để CRUD và theo dõi, quản lí.
          
 Thêm mới sinh viên
 
