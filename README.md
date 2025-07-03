@@ -46,6 +46,11 @@
                 ○ Thêm, sửa, xóa dữ liệu: sinh viên, môn học, bảng điểm.
                 ○ Xem toàn bộ danh sách sinh viên, môn học, bảng điểm.
                 ○ Tìm kiếm bảng điểm, sinh viên, môn học để CRUD và theo dõi, quản lí.
+
+   🎓 **STUDENT(Đang phát triển)**: có quyền truy cập hạn chế
+
+                ○ Chỉ xem và theo dõi được thông tin về sinh viên,môn học, bảng điểm của mình.
+                
          
 Thêm mới sinh viên
 
