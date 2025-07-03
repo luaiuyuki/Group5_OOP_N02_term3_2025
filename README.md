@@ -99,7 +99,7 @@
 
 **1.2 UML Activity Diagram**
 
-## Người dùng ADMIN
+### ADMIN
 
 #### Đăng nhập: (Login)
 
