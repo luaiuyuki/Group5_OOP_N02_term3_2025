@@ -106,15 +106,9 @@
 
 ![image](https://github.com/user-attachments/assets/fe371e66-a730-437f-a39e-c44efc90fa37)
 
-
-![Untitled (5)](https://github.com/user-attachments/assets/fe07778d-e1c6-4d8d-a44d-5dac8cc1398c)
-
 #### 1.2.2. Trang chủ: (Home)
 
 ![image](https://github.com/user-attachments/assets/ef7a015e-63f8-480a-96c5-57a91669bd12)
-
-
-![Untitled (1)](https://github.com/user-attachments/assets/2c36ae5d-9858-4cd4-a895-06d47c060f59)
 
 #### 1.2.3. Mục sinh viên trong trang chủ: (Student Section on the Home Page)
 
