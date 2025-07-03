@@ -29,6 +29,7 @@
 - Giao diện <b>Java Spring Boot</b>.
 - Có chức năng quản lý sinh viên, môn học và bảng điểm.
 - Và các chức năng khác(tìm kiếm, CRUD).
+- Lưu trữ và truy xuất dữ liệu thông qua hệ quản trị cơ sở dữ liệu **MySQL**.
 
 # Cụ thể:
 - **Quản lý sinh viên**:
