@@ -97,10 +97,15 @@
 
 ![class](https://github.com/user-attachments/assets/41c2bda8-e5c6-4f05-a341-5bd7465676db)
 
-
 **1.2 UML Activity Diagram**
 
+## Người dùng ADMIN
+
+#### Đăng nhập: (Login)
+
 ![Untitled (5)](https://github.com/user-attachments/assets/fe07778d-e1c6-4d8d-a44d-5dac8cc1398c)
+
+#### Trang chủ: (Home)
 
 ![Untitled (1)](https://github.com/user-attachments/assets/2c36ae5d-9858-4cd4-a895-06d47c060f59)
 
