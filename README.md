@@ -169,6 +169,7 @@
 
 
 package com.example.servingwebcontent;
+
 public class MyException {
 
     public static void g() {
