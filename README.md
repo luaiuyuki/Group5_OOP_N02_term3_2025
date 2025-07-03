@@ -38,7 +38,14 @@
 ### 1. Người dùng:(`User`)
 
 • **Gồm các thuộc tính:** `username`, `password`, `role`
-• **Chức năng**
+
+• **Chức năng**:
+
+   🔑 **ADMIN**
+                + Thêm, sửa, xóa :sinh viên, môn học, bảng điểm.
+                + Xem toàn bộ danh sách sinh viên, môn học, bảng điểm.
+                + Tìm kiếm bảng điểm, sinh viên, môn học để CRUD.
+         
 Thêm mới sinh viên
 
 Sửa thông tin sinh viên
