@@ -12,8 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-import java.util.List;
-
 
 @Controller
 public class TranscriptController {
@@ -30,7 +28,7 @@ public class TranscriptController {
         this.courseRepository = courseRepository;
     }
 
-    // Hiển thị trang Transcript
+    // Hiển thị trang transcript
     @GetMapping("/transcript")
     public String transcriptPage(Model model) {
         model.addAttribute("transcripts", transcriptRepository.findAll());
@@ -41,7 +39,7 @@ public class TranscriptController {
         return "transcript";
     }
 
-    // Chỉnh sửa bản ghi transcript theo ID
+    // Chuyển sang trang sửa
     @GetMapping("/transcript/edit/{id}")
     public String editTranscript(@PathVariable("id") Long id, Model model) {
         Optional<Transcript> transcriptOpt = transcriptRepository.findById(id);
@@ -56,53 +54,60 @@ public class TranscriptController {
         return "redirect:/transcript";
     }
 
-    // Lưu hoặc cập nhật transcript
-    @PostMapping("/transcript/save")
-    public String saveTranscript(@RequestParam("editing") boolean editing,
-                                 @ModelAttribute Transcript transcript) {
+  @PostMapping("/transcript/save")
+public String saveTranscript(@RequestParam("editing") boolean editing,
+                             @RequestParam(value = "id", required = false) Long id,
+                             @RequestParam("studentId") String studentId,
+                             @RequestParam("courseId") String courseId,
+                             @RequestParam("grade10") Float grade10,
+                             @RequestParam("semester") String semester) {
 
-        Optional<Student> studentOpt = studentRepository.findById(transcript.getStudent().getStudentId());
-        Optional<Course> courseOpt = courseRepository.findById(transcript.getCourse().getCourseID());
+    Optional<Student> studentOpt = studentRepository.findById(studentId);
+    Optional<Course> courseOpt = courseRepository.findById(courseId);
 
-        if (studentOpt.isEmpty() || courseOpt.isEmpty()) {
-            return "redirect:/transcript";
-        }
-
-        transcript.setStudent(studentOpt.get());
-        transcript.setCourse(courseOpt.get());
-
-        if (editing) {
-            Optional<Transcript> existing = transcriptRepository.findById(transcript.getId());
-            if (existing.isPresent()) {
-                Transcript updated = existing.get();
-                updated.setGrade10(transcript.getGrade10());
-                updated.setSemester(transcript.getSemester());
-                updated.setStudent(transcript.getStudent());
-                updated.setCourse(transcript.getCourse());
-                transcriptRepository.save(updated);
-                return "redirect:/transcript/edit/" + updated.getId().toString();
-            }
-        } else {
-            Transcript saved = transcriptRepository.save(transcript);
-            return "redirect:/transcript/edit/" + saved.getId().toString();
-        }
-
+    if (studentOpt.isEmpty() || courseOpt.isEmpty()) {
         return "redirect:/transcript";
     }
+
+    Transcript transcript;
+
+    if (editing && id != null) {
+        Optional<Transcript> existingOpt = transcriptRepository.findById(id);
+        if (existingOpt.isPresent()) {
+            transcript = existingOpt.get();
+        } else {
+            // Nếu không tìm thấy bản ghi để chỉnh sửa thì tạo mới
+            transcript = new Transcript();
+        }
+    } else {
+        // Tạo mới: KHÔNG set id vì DB sẽ tự sinh
+        transcript = new Transcript();
+    }
+
+    transcript.setStudent(studentOpt.get());
+    transcript.setCourse(courseOpt.get());
+    transcript.setGrade10(grade10);
+    transcript.setSemester(semester);
+
+    transcriptRepository.save(transcript);
+
+    return "redirect:/transcript";
+}
+
 
     // Xóa transcript
     @GetMapping("/transcript/delete/{id}")
     public String deleteTranscript(@PathVariable("id") Long id) {
-        transcriptRepository.deleteById(id);
+        if (transcriptRepository.existsById(id)) {
+            transcriptRepository.deleteById(id);
+        }
         return "redirect:/transcript";
     }
 
-    // Trả về fragment danh sách transcript 
+    // Trả về danh sách fragment (nếu dùng AJAX)
     @GetMapping("/transcripts/all")
     public String getAllTranscriptsFragment(Model model) {
         model.addAttribute("transcripts", transcriptRepository.findAll());
         return "fragments/transcript-list";
     }
-    
-     
 }
