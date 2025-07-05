@@ -220,9 +220,8 @@ public class MyException {
 
 ## 🌐 Application Deployment Link:
 
-**Deployment URL:** 
+**Deployment URL:** https://group5oopn02term32025-production-5b7b.up.railway.app/
 
-group5oopn02term32025-production-5b7b.up.railway.app
 
 
 
